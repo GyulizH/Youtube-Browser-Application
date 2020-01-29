@@ -13,6 +13,16 @@ class App extends React.Component {
         this.onTermSubmit('buildings')
     }
 
+    //using FETCH
+    // onTermSubmit = async term => {
+    //     const KEY = 'AIzaSyBXAyimeyDQaq0xckMpjEG4NzYGJR_XTbg';
+    //     const URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&key=${KEY}&q=${term}`;
+    //
+    //     const response = await (await fetch(URL)).json();
+    //     this.setState({
+    //         videos: response.items,
+    //         selectedVideo: response.items[0]
+    //     });
     onTermSubmit = async (term) => {
         const response = await youtube.get('/search', {
             params: {
